@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang ="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter Merch Store</title>
+    <link rel="stylesheet" href="hpstyle.css">
+</head>
+<body>
+    <header>
+        <h1>Harry Potter Merch Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Immerse Yourself Into The World Of Harry Potter</h2>
+            <p>Find merch that represents your hogwarts house!</p>
+        </section>
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="product" id="p1">
+                <img src="https://www.teez.in/cdn/shop/products/Harry-Potter-Classes-Hoodies-3_2fb4c609-7947-45d1-9b2d-1e8a51e2c5b5_large.jpg?v=1574675925" alt="Harry Potter Hoodie">
+                 <h3>Harry Potter Hoodie</h3>
+                 <p>60 SAR</p>
+                <button onclick="addToCart('Harry Potter Hoodie')">Add to Cart</button>
+            </div>
+            <div class="product" id="p2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfUrV5oYy-3PAiN6b4NiqoHrRt3eYZfzv6gw&s" alt="Muggles Hoodie">
+                <h3>Muggles Hoodie</h3>
+                <p>60 SAR</p>
+                <button onclick="addToCart('Muggles Hoodie')">Add to Cart</button>
+            </div>
+            <div class="product" id="p3">
+                <img src="https://threadheads.com/cdn/shop/files/Black-Men-Hoodie-Front_7700f3fe-3368-4ceb-9d0f-5b122c1603f5.jpg?v=1724910665&width=2000" alt="Gryffindor Hoodie">
+                <h3>Gryffindor Hoodie</h3>
+                <p>60 SAR</p>
+                <button onclick="addToCart('Gryffindor Hoodie')">Add to Cart</button>
+            </div>  
+            <div class="product" id="p4">
+                <img src="https://threadheads.com/cdn/shop/files/Black-Hoodie-Women-Front_b3a2b9e7-9275-40a8-b0c2-2877fd5ba279.jpg?v=1724910690&width=2048" alt="Slytherin Hoodie">
+                <h3>Slytherin Hoodie</h3>
+                <p>60 SAR</p>
+                <button onclick="addToCart('Slytherin Hoodie')">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Harry Potter Merch Store</p>
+        <section id="contact">
+            <h4>Contact Us</h4>
+            <p>Email: info@harrypottermerchstore.com</p>
+            <p>Phone: +966 50 785 4471</p>
+            <p>Address: Riyadh, Saudi Arabia</p>
+            </section>
+        </section>
+    </footer>
+    <script src="script.js">
+    </script>
