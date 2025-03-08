@@ -1,17 +1,9 @@
 // Hogwarts House Sorting Feature
 function selectHouse(house) {
-    // Remove any existing house classes
     document.body.classList.remove('gryffindor', 'slytherin', 'ravenclaw', 'hufflepuff');
-    
-    // Add the selected house class
     document.body.classList.add(house.toLowerCase());
-    
-    // Notify the user
     alert(`Welcome to ${house}!`);
 }
-
-// Search Bar Functionality
-
 
 // Add to Cart Functionality
 function addToCart(productName) {
@@ -33,8 +25,8 @@ window.onscroll = function() {
 };
 
 scrollToTopButton.onclick = function() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    document.body.scrollTop = 0; 
+    document.documentElement.scrollTop = 0;
 };
 
 // Dark Mode Toggle
