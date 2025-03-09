@@ -1,16 +1,32 @@
 /* Base styles */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     line-height: 1.6;
+    background-image: url('https://wallpapercat.com/w/full/9/8/e/2164132-3840x2160-desktop-4k-hogwarts-castle-background.jpg'); /* Hogwarts Castle background */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    animation: backgroundAnimation 15s infinite alternate;
+    
+
+    color: #ffffff; /* Default text color for light mode */
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 50% 50%; }
+    100% { background-position: 100% 100%; }
 }
 
 /* Header styles */
 header {
-    background-color: #2c3e50;
-    color: white;
+    background-color: white;
+    color: #2c3e50;
     padding: 30px 20px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -19,6 +35,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5rem;
+    font-family: 'Cinzel', serif;
 }
 
 /* Navigation styles */
@@ -36,7 +53,7 @@ nav ul {
 }
 
 nav a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-weight: bold;
     padding: 5px 10px;
@@ -44,7 +61,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgb(255, 255, 255);
     border-radius: 4px;
 }
 
@@ -53,15 +70,18 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Section headers */
 h2 {
     text-align: center;
     margin: 40px 0 30px;
-    color: #2c3e50;
+    color: #ffffff; /* Dark color for light mode */
     font-size: 2rem;
     position: relative;
+    font-family: 'Cinzel', serif;
 }
 
 h2::after {
@@ -73,12 +93,27 @@ h2::after {
     margin: 10px auto 0;
 }
 
+
+#sorting-hat {
+    text-align: center; 
+    margin: 20px auto; 
+}
+
 /* Product grid */
 #products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
     padding: 20px;
+    justify-content: center; 
+    margin: 0 auto; 
+    max-width: 1200px; 
+}
+
+#products h2 {
+    grid-column: 1 / -1; 
+    text-align: center; 
+    margin: 40px 0 30px; 
 }
 
 /* Product card styles */
@@ -89,10 +124,12 @@ h2::after {
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .product:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* Image container */
@@ -101,16 +138,17 @@ h2::after {
     height: 300px;
     object-fit: cover;
     border-radius: 4px;
+    position: relative;
 }
 
 .product h3 {
-    color: #2c3e50;
+    color: #000000; /* Dark color for light mode */
     margin: 15px 0 10px;
     font-size: 1.3rem;
 }
 
 .product p {
-    color: #666;
+    color: #666; /* Dark color for light mode */
     font-size: 1.1em;
     margin: 10px 0;
 }
@@ -124,12 +162,112 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 1em;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     margin-top: 15px;
 }
 
 button:hover {
     background-color: #2980b9;
+    box-shadow: 0 0 10px #3498db;
+    transform: scale(1.05);
+}
+
+/* Footer styles */
+footer {
+    color: white;
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    padding: 20px;
+    text-align: center;
+}
+
+footer .social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+}
+
+footer .social-media a::before {
+    font-family: 'FontAwesome';
+    margin-right: 5px;
+}
+
+footer .social-media a[href*="facebook"]::before {
+    content: '\f09a';
+}
+
+footer .social-media a[href*="twitter"]::before {
+    content: '\f099';
+}
+
+footer .social-media a[href*="instagram"]::before {
+    content: '\f16d';
+}
+
+/* Scroll to top button */
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s;
+}
+
+#scrollToTop:hover {
+    background-color: #2980b9;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode header {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .product {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode h2 {
+    color: #ffffff; /* White color for dark mode */
+}
+
+.dark-mode .product h3 {
+    color: #ffffff; /* White color for dark mode */
+}
+
+.dark-mode .product p {
+    color: #cccccc; /* Light gray for dark mode */
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+section {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Parallax section */
+.parallax {
+    background-image: url('path/to/your/image.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
 
 /* Responsive design */
@@ -147,3 +285,31 @@ button:hover {
         gap: 20px;
     }
 }
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #products {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Social media icons styling */
+.social-media a {
+    color: white;
+    font-size: 1.5rem; 
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #3498db; 
+}
+
